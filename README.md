@@ -2,6 +2,11 @@
 
 [<img src="Screenshot_from_2023-06-09_11-52-36-transformed-removebg-preview.png" width="100" height="100"/>](Screenshot_from_2023-06-09_11-52-36-transformed-removebg-preview.png) 
  
- computer science student<br>
+ <i><b>computer science student<br>
  Studying in AmalJyothi Engineering College<br>
- Kottayam,kerala 
+ Kottayam,kerala<i><b>
+ 
+ 
+#### <i>I'm a self-taught and an aspiring Front end Web Developer.<i><br><i>I am enthusiastic about contributing to Open Source projects.<i>
+
+[<img src="Screenshot_from_2023-06-09_11-52-36-transformed-removebg-preview.png" width="100" height="100"/>](Screenshot_from_2023-06-09_11-52-36-transformed-removebg-preview.png) 
