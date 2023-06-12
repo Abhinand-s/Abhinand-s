@@ -9,4 +9,5 @@
  
 #### <i>I'm a self-taught and an aspiring Front end Web Developer.<i><br><i>I am enthusiastic about contributing to Open Source projects.<i>
 
-[<img src="pngwing.com.png" width="100" height="100"/>](pngwing.com.png)  [<img src="pngwing.com.png" width="100" height="100"/>](pngwing.com.png)
+[<img src="pngwing.com.png" width="100" height="100"/>](pngwing.com.png)  [<img src="css.png" width="100" height="100"/>](css.png) [<img src="pngegg.png" width="100" height="100"/>](pngegg.png) 
+ 
