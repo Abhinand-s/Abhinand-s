@@ -47,7 +47,7 @@ Let's have some fun with a classic game of Tic Tac Toe. Challenge me by raising 
 
 ### How to Play
 
-1. [Raise an issue](https://github.com/yourusername/yourrepository/issues/new) with the title "Tic Tac Toe ".
+1. [Raise an issue](https://github.com/Abhinand-s/Abhinand-s/issues/new) with the title "Tic Tac Toe ".
 2. Here we use two symbols '#' and '*'
 3. In the issue description, specify your move by indicating the column number (eg: Move # to 1) ").
 4. I'll respond with the move and an updated game board.
