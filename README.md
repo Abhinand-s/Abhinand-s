@@ -1,22 +1,12 @@
 <div align="center">
-  <img height="150" src=""  />
+  <img height="500" src="https://github.com/Abhinand-s/Abhinand-s/blob/9ce4ade9a904bd39f92a2d9cff33e611834dc8ea/Add%20a%20heading%20(1).png"  />
 </div>
 
 ###
-
-<div align="center">
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
-</div>
-
 ###
-
-
-
 ###
-
 <h1 align="center">hey there 👋</h1>
 
-###
 
 <h3 align="left">👩‍💻  About Me</h3>
 
