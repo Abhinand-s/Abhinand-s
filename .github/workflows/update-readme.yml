@@ -2,24 +2,12 @@ name: Update README
 
 on:
   schedule:
-    - cron: '20 00 * * *' # Runs every day at 11:20 AM
+    - cron: '20 11 * * *' # Runs every day at 11:20 AM
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Print message
+        run: echo "GitHub Action ran at $(date)"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Update README
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node update-readme.js
