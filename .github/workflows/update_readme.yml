@@ -1,0 +1,12 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '07 11 * * *' # Runs every day at 11:20 AM
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "GitHub Action ran at $(date)"
