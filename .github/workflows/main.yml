@@ -23,10 +23,10 @@ jobs:
           npm install node-fetch
           node update_readme.js
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Changes
         run: |
           git add README.md
-          git commit -m "Update README with recent issue data [$(date +'%Y-%m-%d %H:%M:%S')]"
+          git commit -m "Update README with recent issue data"
           git push
