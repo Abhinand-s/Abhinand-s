@@ -23,7 +23,7 @@ jobs:
       - name: Fetch data and update README
         run: node update_readme.js
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
+          GITHUB_TOKEN: ${{ secrets.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 }}
 
       - name: Commit and Push Changes
         run: |
