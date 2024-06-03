@@ -47,11 +47,9 @@ Let's have some fun with a classic game of Tic Tac Toe. Challenge me by raising 
 
 ### How to Play
 
-1. [Raise an issue](https://github.com/Abhinand-s/Abhinand-s/issues/new) with the title "Tic Tac Toe ".
-2. Here we use two symbols '#' and '*'
-3. In the issue description, specify your move by indicating the column number (eg: Move # to 1) ").
-4. I'll respond with the move and an updated game board.
-
+1. Here we use two symbols '#' and '*'
+2. [Raise an issue](https://github.com/Abhinand-s/Abhinand-s/issues/new) with the title "specify your move by indicating the column number" (eg: Move # to 1) .
+3. I'll respond with the move and an updated game board.
 
 ### Tic-Tac-Toe Game
 
@@ -65,8 +63,8 @@ Let's see who wins!
 
 ## 📫 How to Reach Me
 
-- 📧 Email: [your.email@example.com](mailto:your.email@example.com)
-- 💼 LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
+- 📧 Email: [abhinands488@gmail.com](mailto:abhinands488@gmail.com)
+- 💼 LinkedIn: [Abhinand s](www.linkedin.com/in/abhinands123)
 
 Feel free to connect with me to discuss technology, and collaboration opportunities, or to say hi!
 
