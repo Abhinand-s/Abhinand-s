@@ -53,10 +53,10 @@ Let's have some fun with a classic game of Tic Tac Toe. Challenge me by raising 
 
 ### Tic-Tac-Toe Game
 
-|   *    |   2    |   3   |
+|   *    |   2    |   #   |
 |--------|--------|-------|
 |   #    |   *    |   6   |
-|   7    |   8    |   9   |
+|   7    |   8    |   *   |
 
 
 Let's see who wins!
