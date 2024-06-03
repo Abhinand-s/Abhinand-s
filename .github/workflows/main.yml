@@ -1,8 +1,9 @@
 name: Update README
 
 on:
-  schedule:
-    - cron: '* * * * *' 
+  push:
+    branches:
+      - main
 
 jobs:
   update-readme:
@@ -12,20 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "Abhinand-s"
-          git config --global user.email "abhinands488@gmail.com"
-
       - name: Fetch data and update README
         run: |
           npm install node-fetch
-          node update_readme.js
+          node index.js
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
-
-      - name: Commit and Push Changes
-        run: |
-          git add README.md
-          git commit -m "Update README with recent issue data [$(date +'%Y-%m-%d %H:%M:%S')]"
-          git push
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
