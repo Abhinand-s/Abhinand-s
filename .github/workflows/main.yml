@@ -23,7 +23,7 @@ jobs:
           npm install node-fetch
           node update_readme.js
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.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 }}
 
       - name: Commit and Push Changes
         run: |
