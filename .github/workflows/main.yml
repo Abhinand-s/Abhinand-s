@@ -1,9 +1,8 @@
 name: Update README
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '* * * * *' # Run every day at midnight (UTC)
 
 jobs:
   update-readme:
@@ -28,5 +27,5 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git add README.md
-          git commit -m "Update README with recent issue data"
+          git commit -m "Update README with recent issue data [$(date +'%Y-%m-%d %H:%M:%S')]"
           git push
