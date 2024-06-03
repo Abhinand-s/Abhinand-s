@@ -73,6 +73,8 @@ Feel free to connect with me to discuss technology, and collaboration opportunit
 Here are the usernames of the players who recently played Tic Tac Toe:
 
 <!-- START_RECENTLY_PLAYED_GAMES -->
+- Issue by @Abhinand-s: Mov # to 4
+- Issue by @Abhinand-s: Mov * to 5
 - Issue by @Abhinand-s: MOV * to 1
 - Issue by @Abhinand-s: #
 - Issue by @Abhinand-s: mov
