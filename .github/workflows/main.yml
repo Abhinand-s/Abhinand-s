@@ -29,4 +29,5 @@ jobs:
         run: |
           git add README.md
           git commit -m "Update README with recent issue data [$(date +'%Y-%m-%d %H:%M:%S')]"
-          git push
+          git push -f origin main
+
