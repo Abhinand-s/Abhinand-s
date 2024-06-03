@@ -1,9 +1,8 @@
 name: Update README
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * *' # Run every day at midnight (UTC)
 
 jobs:
   update-readme:
@@ -21,12 +20,12 @@ jobs:
       - name: Fetch data and update README
         run: |
           npm install node-fetch
-          node index.js
+          node update_readme.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Changes
         run: |
           git add README.md
-          git commit -m "Update README with recent issue data"
+          git commit -m "Update README with recent issue data [$(date +'%Y-%m-%d %H:%M:%S')]"
           git push

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Add a heading.png" alt="Heading Image" />
+  <img src="banner.png" alt="Heading Image" />
 </div>
 
 # Welcome to My GitHub Profile! 🚀
@@ -75,9 +75,4 @@ Feel free to connect with me to discuss technology, and collaboration opportunit
 Here are the usernames of the players who recently played Tic Tac Toe:
 
 <!-- START_RECENTLY_PLAYED_GAMES -->
-- Issue by @Abhinand-s: MOV * to 1
-- Issue by @Abhinand-s: #
-- Issue by @Abhinand-s: mov
-- Issue by @Abhinand-s: Tic Tac Toe
-- Issue by @Abhinand-s: Update README.md
 <!-- END_RECENTLY_PLAYED_GAMES -->

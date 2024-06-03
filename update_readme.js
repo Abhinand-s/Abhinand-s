@@ -9,7 +9,8 @@ async function fetchData() {
 
     const usernamesAndTitles = issues.map(issue => `- Issue by @${issue.user.login}: ${issue.title}`);
 
-    console.log('Usernames and Titles:', usernamesAndTitles);
+
+    //console.log('Usernames and Titles:', usernamesAndTitles);
 
     const readme = fs.readFileSync('README.md', 'utf8');
     const updatedReadme = readme.replace(
