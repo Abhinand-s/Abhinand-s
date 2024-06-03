@@ -64,7 +64,7 @@ Let's see who wins!
 ## 📫 How to Reach Me
 
 - 📧 Email: [abhinands488@gmail.com](mailto:abhinands488@gmail.com)
-- 💼 LinkedIn: [Abhinand s](www.linkedin.com/in/abhinands123)
+- 💼 LinkedIn: [Abhinand s](https://www.linkedin.com/in/abhinand-s-53378b238/)
 
 Feel free to connect with me to discuss technology, and collaboration opportunities, or to say hi!
 
