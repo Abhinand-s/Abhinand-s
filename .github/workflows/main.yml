@@ -16,6 +16,6 @@ jobs:
       - name: Fetch data and update README
         run: |
           npm install node-fetch
-          node index.js
+          node update_readme.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
