@@ -53,10 +53,10 @@ Let's have some fun with a classic game of Tic Tac Toe. Challenge me by raising 
 
 ### Tic-Tac-Toe Game
 
-|   *    |   2    |   #   |
+|   1    |   2    |   3   |
 |--------|--------|-------|
-|   #    |   *    |   6   |
-|   7    |   8    |   *   |
+|   4    |   5    |   6   |
+|   7    |   8    |   9   |
 
 
 Let's see who wins!
@@ -73,13 +73,5 @@ Feel free to connect with me to discuss technology, and collaboration opportunit
 Here are the usernames of the players who recently played Tic Tac Toe:
 
 <!-- START_RECENTLY_PLAYED_GAMES -->
-- Issue by @Abhinand-s: mov # to 4
-- Issue by @Abhinand-s: mov # to 3
-- Issue by @Abhinand-s: Mov * to 9
-- Issue by @Abhinand-s: Mov # to 4
-- Issue by @Abhinand-s: Mov * to 5
-- Issue by @Abhinand-s: MOV * to 1
-- Issue by @Abhinand-s: #
-- Issue by @Abhinand-s: mov
-- Issue by @Abhinand-s: Tic Tac Toe
+
 <!-- END_RECENTLY_PLAYED_GAMES -->
