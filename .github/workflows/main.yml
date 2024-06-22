@@ -11,51 +11,19 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install jq
-      run: sudo apt-get install jq
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-    - name: Process issue and move Pacman
+    - name: Install dependencies
+      run: pip install --upgrade pip
+
+    - name: Run Pacman script
+      run: python move_pacman.py
+
+    - name: Commit and push changes
       run: |
-        ISSUE_BODY=$(jq -r '.issue.body' "$GITHUB_EVENT_PATH")
-
-        # Extract coordinates from the issue body
-        X_COORD=$(echo "$ISSUE_BODY" | grep -oP 'X:\s*\K\d+')
-        Y_COORD=$(echo "$ISSUE_BODY" | grep -oP 'Y:\s*\K\d+')
-
-        if [ -z "$X_COORD" ] || [ -z "$Y_COORD" ]; then
-          echo "Coordinates not found in issue body."
-          exit 1
-        fi
-
-        # Read the entire README.md content
-        GAME_BOARD=$(<README.md)
-
-        # Get current Pacman position
-        CURRENT_POSITION=$(echo "$GAME_BOARD" | grep -n 'P' | head -n 1 | cut -d: -f1)
-
-        if [ -z "$CURRENT_POSITION" ]; then
-          echo "Pacman position not found."
-          exit 1
-        fi
-
-        # Read the target line and validate the move
-        TARGET_LINE=$(echo "$GAME_BOARD" | sed -n "${Y_COORD}p")
-        TARGET_CHAR=$(echo "$TARGET_LINE" | cut -c "$X_COORD")
-
-        if [ "$TARGET_CHAR" == "W" ]; then
-          echo "Invalid move. The target position is a wall."
-          exit 1
-        fi
-
-        # Create a new game board with the updated Pacman position
-        UPDATED_GAME_BOARD=$(echo "$GAME_BOARD" | sed "${CURRENT_POSITION}s/P/./")
-        UPDATED_GAME_BOARD=$(echo "$UPDATED_GAME_BOARD" | awk -v x="$X_COORD" -v y="$Y_COORD" \
-          'NR == y { $x = "P"; }1' OFS="" FS="")
-
-        # Update the README.md file
-        echo "$UPDATED_GAME_BOARD" > README.md
-
-        # Commit and push the changes
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
