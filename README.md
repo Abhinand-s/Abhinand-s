@@ -41,25 +41,42 @@ Hello! I'm Abhinand s, a developer from Kerala, driven by curiosity and a love f
 - Website development
 - Fusion 360
 
-## 🎮 Play a Game: Tic Tac Toe!
+# Pacman Game
 
-Let's have some fun with a classic game of Tic Tac Toe. Challenge me by raising an issue!
+Use the coordinates to move Pacman by creating an issue.
 
-### How to Play
+## How to Play
 
-1. Here we use two symbols '#' and '*'
-2. [Raise an issue](https://github.com/Abhinand-s/Abhinand-s/issues/new) with the title "specify your move by indicating the column number" (eg: Move # to 1) .
-3. I'll respond with the move and an updated game board.
+1. Create a new issue.
+2. In the issue body, specify the coordinates where you want Pacman to move in the format:
+      X: [column number]
+      Y: [row number]
+3. Submit the issue.
 
-### Tic-Tac-Toe Game
+## Game Board
 
-|   1    |   2    |   3   |
-|--------|--------|-------|
-|   4    |   5    |   6   |
-|   7    |   8    |   9   |
+P: Pacman
+W: Wall
+. : Dot
 
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|
+| P | . | W | . | . | . | W | . |
+| . | W | W | W | . | W | W | . |
+| . | . | . | . | . | . | . | . |
+| . | W | W | W | W | W | W | . |
+| . | . | . | . | . | . | . | . |
+| . | W | W | W | W | W | W | . |
+| . | . | . | . | . | . | . | . |
+| . | W | . | . | W | W | . | . |
 
-Let's see who wins!
+Eg:
+
+Title: Move Pacman to (3, 1)
+Body:
+X: 3
+Y: 1
+
 
 ## 📫 How to Reach Me
 
@@ -67,11 +84,3 @@ Let's see who wins!
 - 💼 LinkedIn: [Abhinand s](https://www.linkedin.com/in/abhinand-s-53378b238/)
 
 Feel free to connect with me to discuss technology, and collaboration opportunities, or to say hi!
-
-## Recently Played Games
-
-Here are the usernames of the players who recently played Tic Tac Toe:
-
-<!-- START_RECENTLY_PLAYED_GAMES -->
-
-<!-- END_RECENTLY_PLAYED_GAMES -->
