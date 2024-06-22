@@ -54,7 +54,6 @@ Use the coordinates to move Pacman by creating an issue.
 3. Submit the issue.
 
 ## Game Board
-
 P: Pacman
 W: Wall
 . : Dot
