@@ -1,28 +1,26 @@
-const fetch = require('node-fetch');
 const fs = require('fs');
 
-async function fetchData() {
-  try {
-    const response = await fetch('https://api.github.com/repos/Abhinand-s/Abhinand-s/issues?state=all');
-    const data = await response.json();
-    const issues = data.slice(0, 9);
+function movePacman(x, y) {
+    // Read the README file
+    let readme = fs.readFileSync('README.md', 'utf8');
 
-    const usernamesAndTitles = issues.map(issue => `- Issue by @${issue.user.login}: ${issue.title}`);
+    // Update the Pacman's position in the README
+    readme = readme.replace(/P/g, '.'); // Clear previous Pacman position
+    const lines = readme.split('\n');
+    const row = lines[y + 1];
+    const newRow = row.slice(0, x * 4 + 1) + 'P' + row.slice(x * 4 + 2);
+    lines[y + 1] = newRow;
+    readme = lines.join('\n');
 
-
-    //console.log('Usernames and Titles:', usernamesAndTitles);
-
-    const readme = fs.readFileSync('README.md', 'utf8');
-    const updatedReadme = readme.replace(
-      /<!-- START_RECENTLY_PLAYED_GAMES -->[\s\S]*?<!-- END_RECENTLY_PLAYED_GAMES -->/m,
-      `<!-- START_RECENTLY_PLAYED_GAMES -->\n${usernamesAndTitles.join('\n')}\n<!-- END_RECENTLY_PLAYED_GAMES -->`
-    );
-
-    fs.writeFileSync('README.md', updatedReadme, 'utf8');
-    console.log('README.md updated successfully!');
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
+    // Write the updated README file
+    fs.writeFileSync('README.md', readme, 'utf8');
 }
 
-fetchData();
+// Extract x and y coordinates from the issue title
+const title = process.argv[2];
+const match = title.match(/\((\d+),\s*(\d+)\)/);
+if (match) {
+    const x = parseInt(match[1]);
+    const y = parseInt(match[2]);
+    movePacman(x, y);
+}
