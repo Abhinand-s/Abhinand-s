@@ -1,31 +1,22 @@
-name: Pacman Game
+name: Update Pacman
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  move-pacman:
+  update-pacman:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: pip install --upgrade pip
-
-    - name: Run Pacman script
-      run: python Move_pacman.py
-
-    - name: Commit and push changes
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add README.md
-        git commit -m "Move Pacman to ($X_COORD, $Y_COORD)"
-        git push
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      
+      - name: Run JavaScript script
+        run: |
+          npm install
+          node update_readme.js ${{ github.event.issue.title }}
