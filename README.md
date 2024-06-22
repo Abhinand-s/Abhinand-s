@@ -47,34 +47,29 @@ Use the coordinates to move Pacman by creating an issue.
 
 ## How to Play
 
-1. Create a new issue.
-2. In the issue body, specify the coordinates where you want Pacman to move in the format:
-      X: [column number]
-      Y: [row number]
+1. [Create a new issue](https://github.com/Abhinand-s/Abhinand-s/issues/new?title=Move+Pacman+to+(X,Y)).
+2. In the issue title, replace `X` and `Y` with the coordinates where you want Pacman to move.
 3. Submit the issue.
 
 ## Game Board
-P: Pacman
-W: Wall
-. : Dot
+P: Pacman  
+🔴: Wall  
+🟡: Dot
 
-| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|---|---|---|---|---|---|---|---|
-| P | . | W | . | . | . | W | . |
-| . | W | W | W | . | W | W | . |
-| . | . | . | . | . | . | . | . |
-| . | W | W | W | W | W | W | . |
-| . | . | . | . | . | . | . | . |
-| . | W | W | W | W | W | W | . |
-| . | . | . | . | . | . | . | . |
-| . | W | . | . | W | W | . | . |
+|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | P | 🟡 | 🔴 | 🟡 | 🟡 | 🟡 | 🔴 | 🟡 |
+| 2 | 🟡 | 🔴 | 🔴 | 🔴 | 🟡 | 🔴 | 🔴 | 🟡 |
+| 3 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
+| 4 | 🟡 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🟡 |
+| 5 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
+| 6 | 🟡 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🟡 |
+| 7 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
+| 8 | 🟡 | 🔴 | 🟡 | 🟡 | 🔴 | 🔴 | 🟡 | 🟡 |
+
 
 Eg:
-
 Title: Move Pacman to (3, 1)
-Body:
-X: 3
-Y: 1
 
 
 ## 📫 How to Reach Me
