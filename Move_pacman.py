@@ -4,7 +4,13 @@ import re
 def read_issue_body():
     with open(os.getenv('GITHUB_EVENT_PATH')) as f:
         event_data = f.read()
-    return re.search(r'(?<=X:\s*)\d+', event_data).group(0), re.search(r'(?<=Y:\s*)\d+', event_data).group(0)
+    x_match = re.search(r'X:\s*(\d+)', event_data)
+    y_match = re.search(r'Y:\s*(\d+)', event_data)
+    if x_match and y_match:
+        return x_match.group(1), y_match.group(1)
+    else:
+        print("Coordinates not found in issue body.")
+        exit(1)
 
 def read_game_board(file_path):
     with open(file_path, 'r') as file:
