@@ -22,35 +22,42 @@ jobs:
         X_COORD=$(echo "$ISSUE_BODY" | grep -oP 'X:\s*\K\d+')
         Y_COORD=$(echo "$ISSUE_BODY" | grep -oP 'Y:\s*\K\d+')
 
-        # Read the current game board
-        GAME_BOARD=$(sed -n '/## Game Board/,/^$/p' README.md)
+        if [ -z "$X_COORD" ] || [ -z "$Y_COORD" ]; then
+          echo "Coordinates not found in issue body."
+          exit 1
+        fi
+
+        # Read the entire README.md content
+        GAME_BOARD=$(<README.md)
 
         # Get current Pacman position
-        CURRENT_POSITION=$(echo "$GAME_BOARD" | grep -n 'P' | awk -F':' '{print $1}')
+        CURRENT_POSITION=$(echo "$GAME_BOARD" | grep -n 'P' | head -n 1 | cut -d: -f1)
 
-        # Get the target position line
-        TARGET_LINE=$(echo "$GAME_BOARD" | sed -n "${Y_COORD}p")
-
-        # Extract the specific column in the target line
-        TARGET_VALUE=$(echo "$TARGET_LINE" | awk -v col="$X_COORD" -F'|' '{print $col}' | tr -d '[:space:]')
-
-        # Check if the target position is not a wall
-        if [ "$TARGET_VALUE" != "W" ]; then
-          # Replace current Pacman position with a dot
-          NEW_GAME_BOARD=$(echo "$GAME_BOARD" | sed "${CURRENT_POSITION}s/P/./")
-
-          # Replace the target position with Pacman
-          NEW_GAME_BOARD=$(echo "$NEW_GAME_BOARD" | sed "${Y_COORD}s/| $X_COORD |/| P |/")
-
-          # Update the README file
-          sed -i "/## Game Board/,/^$/c\\$NEW_GAME_BOARD" README.md
-
-          # Commit and push the changes
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m "Move Pacman to ($X_COORD, $Y_COORD)"
-          git push
-        else
-          echo "Invalid move. The target position is a wall."
+        if [ -z "$CURRENT_POSITION" ]; then
+          echo "Pacman position not found."
+          exit 1
         fi
+
+        # Read the target line and validate the move
+        TARGET_LINE=$(echo "$GAME_BOARD" | sed -n "${Y_COORD}p")
+        TARGET_CHAR=$(echo "$TARGET_LINE" | cut -c "$X_COORD")
+
+        if [ "$TARGET_CHAR" == "W" ]; then
+          echo "Invalid move. The target position is a wall."
+          exit 1
+        fi
+
+        # Create a new game board with the updated Pacman position
+        UPDATED_GAME_BOARD=$(echo "$GAME_BOARD" | sed "${CURRENT_POSITION}s/P/./")
+        UPDATED_GAME_BOARD=$(echo "$UPDATED_GAME_BOARD" | awk -v x="$X_COORD" -v y="$Y_COORD" \
+          'NR == y { $x = "P"; }1' OFS="" FS="")
+
+        # Update the README.md file
+        echo "$UPDATED_GAME_BOARD" > README.md
+
+        # Commit and push the changes
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Move Pacman to ($X_COORD, $Y_COORD)"
+        git push
