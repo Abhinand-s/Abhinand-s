@@ -1,1 +1,46 @@
+name: Pacman Game
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  move-pacman:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Process issue and move Pacman
+      run: |
+        ISSUE_BODY=$(jq -r '.issue.body' "$GITHUB_EVENT_PATH")
+
+        # Extract coordinates from the issue body
+        X_COORD=$(echo "$ISSUE_BODY" | grep -oP 'X:\s*\K\d+')
+        Y_COORD=$(echo "$ISSUE_BODY" | grep -oP 'Y:\s*\K\d+')
+
+        # Read the current game board
+        GAME_BOARD=$(cat README.md | sed -n '/## Game Board/,/^$/p')
+
+        # Get current Pacman position
+        CURRENT_POSITION=$(echo "$GAME_BOARD" | grep -n 'P' | sed 's/:/ /' | awk '{print $1, $2}' | sed 's/|//g' | tr -d ' ')
+
+        # Get the target position value
+        TARGET_VALUE=$(echo "$GAME_BOARD" | sed -n "${Y_COORD}p" | cut -d'|' -f$X_COORD | tr -d ' ')
+
+        # Check if the target position is a wall
+        if [ "$TARGET_VALUE" != "W" ]; then
+          # Update the game board
+          NEW_GAME_BOARD=$(echo "$GAME_BOARD" | sed "s/| ${CURRENT_POSITION##* } |/| . |/g" | sed "${Y_COORD}s/| ${X_COORD} |/| P |/g")
+
+          # Update the README file
+          sed -i "/## Game Board/,/^$/c\\$NEW_GAME_BOARD" README.md
+
+          # Commit and push the changes
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "Move Pacman to ($X_COORD, $Y_COORD)"
+          git push
+        fi
 
