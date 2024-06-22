@@ -20,7 +20,7 @@ jobs:
       run: pip install --upgrade pip
 
     - name: Run Pacman script
-      run: python move_pacman.py
+      run: python Move_pacman.py
 
     - name: Commit and push changes
       run: |
