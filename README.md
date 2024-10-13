@@ -31,7 +31,12 @@ Hello! I'm Abhinand s, a developer from Kerala, driven by curiosity and a love f
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="React logo" />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" height="40" alt="Figma logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python logo" />
+  <img width="12" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" height="40" alt="Google Colab logo" />
 </div>
+
 
 ## 🌱 What I'm Learning
 
@@ -40,37 +45,7 @@ Hello! I'm Abhinand s, a developer from Kerala, driven by curiosity and a love f
 - UI/UX design with Figma
 - Website development
 - Fusion 360
-
-# Pacman Game
-
-Use the coordinates to move Pacman by creating an issue.
-
-## How to Play
-
-1. [Create a new issue](https://github.com/Abhinand-s/Abhinand-s/issues/new?title=Move+Pacman+to+(X,Y)).
-2. In the issue title, replace `X` and `Y` with the coordinates where you want Pacman to move.
-3. Submit the issue.
-
-## Game Board
-P: Pacman  
-🔴: Wall  
-🟡: Dot
-
-|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|---|---|---|---|---|---|---|---|---|
-| 1 | P | 🟡 | 🔴 | 🟡 | 🟡 | 🟡 | 🔴 | 🟡 |
-| 2 | 🟡 | 🔴 | 🔴 | 🔴 | 🟡 | 🔴 | 🔴 | 🟡 |
-| 3 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
-| 4 | 🟡 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🟡 |
-| 5 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
-| 6 | 🟡 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🟡 |
-| 7 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
-| 8 | 🟡 | 🔴 | 🟡 | 🟡 | 🔴 | 🔴 | 🟡 | 🟡 
-
-
-Eg:
-Title: Move Pacman to (3, 1)
-
+- AI Development
 
 ## 📫 How to Reach Me
 
